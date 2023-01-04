@@ -41,6 +41,10 @@ html {
     font-family: var(--FF);
 }
 
+body {
+    min-height: 100vh;
+}
+
 .main {
     padding: 1.5em;
 }
@@ -137,4 +141,72 @@ html {
     font-weight: var(--FW-700);
     padding: 0 2em 2em;
     text-align: center;
+}
+
+/* || DESKTOP VIEW */
+@media screen and (min-width: 1200px) {
+    /* || GENERAL STYLES */
+    html {
+        background: url("../img/bg-pattern-top-desktop.svg") no-repeat top, url("../img/bg-pattern-bottom-desktop.svg") no-repeat bottom;;
+    }
+
+    .main {
+        margin: 5em 8rem;
+    }
+
+    /* || TOP */
+    .top {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* HERO */
+    .hero {
+        max-width: 400px;
+    }
+
+    .hero__h2, .hero__p {
+        text-align: left;
+    }
+
+    /* STAR */
+    .star {
+        margin-top: 2em;
+    }
+    
+    .star__container {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .star__icon img {
+        margin: 0 0.25em;
+    }
+
+    .star__figcaption {
+        margin: 0.25em 3em 0 2em;
+    }
+
+    .star-one {
+        transform: translateX(-8em);
+    }
+
+    .star-two {
+        transform: translateX(-4em);
+    }
+
+    /* || USER */
+    .user {
+        display: flex;
+        gap: 2em;
+    }
+
+    .user-two {
+        transform: translateY(2em);
+    }
+
+    .user-three {
+        transform: translateY(4em);
+    }
 }
