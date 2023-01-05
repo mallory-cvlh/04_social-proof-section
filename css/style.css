@@ -1,0 +1,234 @@
+/* || RESET */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+/* || VARIABLES */
+:root {
+    /* FONTS */
+    --FF: 'League Spartan', sans-serif;
+    --FW-REGULAR: 400;
+    --FW-MEDIUM: 500;
+    --FW-BOLD: 700;
+
+    /* COLORS */
+    --MAGENTA: hsl(300, 43%, 22%);
+    --PINK: hsl(333, 80%, 67%);
+    --DG-MAGENTA: hsl(303, 10%, 53%);
+    --LG-MAGENTA: hsl(300, 24%, 96%);
+    --WHITE: hsl(0, 0%, 100%);
+
+    /* BACKGROUND */
+    --BG-MOBILE: url(../img/bg-pattern-top-mobile.svg) top no-repeat,
+                 url(../img/bg-pattern-bottom-mobile.svg) bottom no-repeat,
+                 var(--WHITE);
+    --BG-DESKTOP: url(../img/bg-pattern-top-desktop.svg) top no-repeat,
+                  url(../img/bg-pattern-bottom-desktop.svg) bottom no-repeat,
+                  var(--WHITE);
+
+    /* BORDER */
+    --RADIUS: 0.625rem;
+
+    /* MARGIN */
+    --CONTAINER-MARGIN: 1rem 0;
+}
+
+/* || UTILITY CLASSES */
+.sr-only {
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/* || GENERAL STYLES */
+body {
+    background: var(--BG-MOBILE);
+    display: grid;
+    font-family: var(--FF);
+    font-weight: var(--FW-REGULAR);
+    margin: 4rem 2rem;
+    min-height: 100vh;
+    place-content: center;
+}
+
+ul {
+    list-style: none;
+}
+
+/* || HEADER */
+.header {
+    text-align: center;
+}
+
+.header__title {
+    color: var(--MAGENTA);
+    font-size: 2.5rem;
+    font-weight: var(--FW-BOLD);
+    line-height: 0.8;
+    padding: 1.5rem;
+}
+
+.header__intro {
+    color: var(--DG-MAGENTA);
+    line-height: 1.5;
+}
+
+/* || RATING */
+.rating {
+    margin-top: 2rem;
+}
+
+.rating__container {
+    align-items: center;
+    background: var(--LG-MAGENTA);
+    border-radius: var(--RADIUS);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: var(--CONTAINER-MARGIN);
+    padding: 1rem;
+}
+
+.rating__star {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.rating__category {
+    color: var(--MAGENTA);
+    font-weight: var(--FW-BOLD);
+}
+
+/* || REVIEW SECTION */
+.review {
+    margin-top: 3rem;
+}
+
+.review__container {
+    background: var(--MAGENTA);
+    border-radius: var(--RADIUS);
+    color: var(--LG-MAGENTA);
+    margin: var(--CONTAINER-MARGIN);
+    max-width: 22rem;
+    padding: 2rem;
+}
+
+.review__user {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.review__user img {
+    border-radius: 50%;
+    width: 45px;
+}
+
+.review__user-name {
+    font-weight: var(--FW-BOLD);
+}
+
+.review__user-verif {
+    color: var(--PINK);
+    font-weight: var(--FW-MEDIUM);
+    margin-top: 0.25rem;
+}
+
+.review__user-quote {
+    line-height: 1.5;
+}
+
+/* || FOOTER */
+.footer, .footer a {
+    color: var(--MAGENTA);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* || MEDIA QUERIES */
+/* TABLET */
+@media screen and (min-width: 576px) {
+    body {
+        background: var(--BG-DESKTOP);
+    }
+
+    .review__grid {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 992px) {
+    /* || HEADER + RATING */
+    .header-group {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+    }   
+
+    .header {
+        max-width: 25rem;
+        text-align: left;
+    }
+
+    .header__title {
+        max-width: 20rem;
+        padding-left: 0;
+    }
+
+    .rating__container {
+        flex-direction: row;
+        gap: 2rem;
+        padding-left: 2rem;
+        padding-right: 4rem;
+    }
+
+    .rating__category {
+        padding-top: 0.25rem;
+    }
+
+    .rating__container:first-child {
+        transform: translateX(-4rem);
+    }
+
+    .rating__container:nth-child(2) {
+        transform: translateX(-2rem);
+    }
+
+    /* || REVIEW */
+    .review__grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .review__container:nth-child(2) {
+        transform: translateY(2rem);
+    }
+
+    .review__container:last-child {
+        transform: translateY(4rem);
+    }
+
+    /* || FOOTER */
+    .footer, .footer a {
+        margin-top: 5rem;
+    }
+
+}
