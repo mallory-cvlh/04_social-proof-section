@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](https://github.com/mallory-cvlh/04_social-proof-section/blob/main/MySolution/socialProof.png)
+![](https://github.com/mallory-cvlh/04_social-proof-section/blob/main/img/Screenshot.png)
 
 ### Links
 
